@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BOX : MonoBehaviour
 {
-    public bool hit;
+    public bool hit; //当たり判定のフラグ
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class BOX : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        //プレイヤーに当たった処理
         if(other.tag == "Player")
         {
             hit = true;
@@ -27,6 +28,7 @@ public class BOX : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        //プレイヤーから離れた処理
         if (other.tag == "Player")
         {
             hit = false;
